@@ -38,9 +38,14 @@ classifier=DecisionTreeClassifier()
 #training the modle
 classifier.fit(x_train,y_train)
 
+def get_prediction(x):
+    x=np.array(x)
+    x=x.reshape(1,-1)
+    return classifier.predict(x)
+
 #making predictions
-y_pred=classifier.predict(x_test)
+# y_pred=classifier.predict(x_test)
 # print(y_pred)
-print(accuracy_score(y_test,y_pred)*100)
+# print(accuracy_score(y_test,y_pred)*100)
 # print(confusion_matrix(y_test,y_pred))
 # print(classification_report(y_test,y_pred))

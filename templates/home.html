@@ -9,7 +9,8 @@
 <body>
     <h1>Hello World</h1>
     <!-- {{columns}} -->
-    <form action="submit">
+    <form action="submit" method="POST">
+        {% csrf_token %}
     {% for i in columns %}
     <input type="checkbox" name="{{i}}">{{i}}<br>
     {% endfor %}
