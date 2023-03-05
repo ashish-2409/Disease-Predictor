@@ -5,14 +5,20 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from sklearn.tree import DecisionTreeClassifier
+import sys
 
+# for p in sys.path:
+#     print( p )
 #reading the dataset
-ds=pd.read_csv('../Dataset/dataset.csv')
+ds=pd.read_csv('C:/Users/Ashish/Desktop/Disease Predictor/Disease-Predictor/Dataset/dataset.csv')
 # print(ds)
 
 # deleting the last column extra value
 del ds[ds.columns[-1]]
 # print(ds.columns)
+
+def get_columns():
+    return ds.columns
 
 #separating input and output vectors
 input=ds.iloc[:,:-1]
